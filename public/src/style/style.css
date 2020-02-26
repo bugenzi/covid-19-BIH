@@ -4,6 +4,8 @@
 }
 
 body{
+    background-image: url("https://wallpaperaccess.com/full/315294.jpg");
+    background-size: cover;
     display: flex;
     flex-direction: column;
     min-height: 90vh;
@@ -23,7 +25,7 @@ body{
 }
 
 .joke_box,p{
-    background-color: #e7dfdd;
+    background-color: #0e0B16;
     resize: both;
     color: #ab23e0;
 }
