@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const noris = require('./public/noris')
 const request = require('request');
-
+const  port=process.env.PORT || 3000;
 const url = 'https://api.chucknorris.io/jokes/random';
 
 const app = express()
@@ -30,7 +30,7 @@ app.get('/noris', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server is  on port 3000");
 
 })
