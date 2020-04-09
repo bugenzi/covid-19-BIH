@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+    fetch('/stats').then((response)=>{
+        response.json().then((data)=>{
+            console.log(data)
+            var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Covid-19 statistike u BIH"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: data.confirmed, label: "Slucajeva"},
+			{y: data.deaths, label: "Mrtvih"},
+			{y: data.recoverd, label: "Oporavljenih"},
+			{y: data.active, label: "Aktinvih slucajeva"},
+			
+		]
+	}]
+});
+chart.render();
+
+        })
+    })
+
+
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="chart.js"></script>
+</body>
+</html>
